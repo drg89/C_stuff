@@ -1,0 +1,57 @@
+Stage 1
+==========
+just*had*1st*foa*lecture,*algrthms*r*awesome!!!*#foa
+
+Stage 2
+==========
+just*had*1st*foa*lecture*algrthms*r*awesome*foa
+*assignment1*is*fun
+ultimate*answer*to*life*universe*everything****42
+handball*handball*handball
+knowledge*is*power*france*is*bacon
+love*this*cute*cat*httpsanonymisedurl
+***a*sample*tweet***
+yet**another*sample*tweet
+**comp10002***2019**assignment1****is*fun****
+handball*handball
+
+Stage 3
+==========
+just*had*1st*foa*lecture*algrthms*r*awesome*foa
+assignment1*is*fun
+ultimate*answer*to*life*universe*everything*42
+handball*handball*handball
+knowledge*is*power*france*is*bacon
+love*this*cute*cat*httpsanonymisedurl
+a*sample*tweet
+yet*another*sample*tweet
+comp10002*2019*assignment1*is*fun
+handball*handball
+Total: 10
+Longest: just*had*1st*foa*lecture*algrthms*r*awesome*foa
+Length: 47
+
+Stage 4
+==========
+just*had*1st*foa*lecture*algrthms*r*awesome*foa
+ultimate*answer*to*life*universe*everything*42
+handball*handball*handball
+knowledge*is*power*france*is*bacon
+love*this*cute*cat*httpsanonymisedurl
+a*sample*tweet
+yet*another*sample*tweet
+comp10002*2019*assignment1*is*fun
+Non-contained: 8
+
+Stage 5
+==========
+a*sample*tweet
+handball*handball
+assignment1*is*fun
+yet*another*sample*tweet
+handball*handball*handball
+comp10002*2019*assignment1*is*fun
+knowledge*is*power*france*is*bacon
+love*this*cute*cat*httpsanonymisedurl
+ultimate*answer*to*life*universe*everything*42
+just*had*1st*foa*lecture*algrthms*r*awesome*foa

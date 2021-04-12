@@ -1,0 +1,40 @@
+Part 1A:
+Worst case: The gap is somehow always behind Sam when he starts walking so he has to walk all the way around the cirle before finding it. So then worst cast complexity = O(n) where n=l
+
+Part 1B:
+
+function findGap(V[l], k, startPoint)
+    if explore(k, startPoint) do //either direction works, 50/50 chance of being correct anyway
+        return 'left'
+        else do
+            return 'right'  //if not left, then it's gotta be right
+
+function explore(k, start)
+    while k != 0 do
+        if start.isGap is false do 
+            start = start.next
+            else do
+                return start
+        k <- k-1
+    return nil
+
+Since there is 1/2 chance of being correct, in the worst case the algo would go the wrong direction until k steps and have compared values k times.
+        
+Part 1C:
+
+function findGapNoK(V[l], startPoint)
+    currPoint <- startPoint
+    count <- 1  //distance of the first step taken
+    while count < l do
+        for(i <- 0; i<count; i++) do
+            if count%2 is 1 do //checking odd/even for direction
+                currPoint <- currPoint.right
+            else do
+                currPoint <- currPoint.left
+        if currPoint.gap is true do
+            return currPoint
+        else do
+            currPoint <- startPoint
+
+Part 1D:
+

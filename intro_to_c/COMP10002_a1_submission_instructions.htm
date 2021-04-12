@@ -1,0 +1,371 @@
+<html><head><title>Algorithms Are Fun!</title>
+</head><body>
+<font size="+2">
+<h3>Submissions for COMP10002 Assignment 1</h3>
+
+Instructions for submitting programming projects using the
+<tt>submit</tt> and <tt>verify</tt> systems.
+
+<p>Note, you will need to install the University's
+<a
+href="http://studentit.unimelb.edu.au/findconnect/vpn">VPN
+software</a> in order to connect to <tt>dimefox</tt> from outside the
+University network (that is, from home).
+<h3>Everyone Read This First!</h3>
+
+There are two machines involved:
+<ul>
+<li>The machine your file is on (might be the shared drive accessible
+from the lab computers, might be your own PC, might be your own Mac
+machine); and
+<li>The server that you run <tt>submit</tt> on, and that we compile and test your programs on.
+</ul>
+So there are two steps that need to be performed:
+<ul>
+<li>The COPY step: Copy your file over to the <tt>submit</tt> machine; and then
+<li>The SUBMIT step: Login (in a terminal shell) to the server and run the <tt>submit</tt> command.
+</ul>
+How you do these two steps depends on what kind of machine you are
+on.
+But everyone has to do the two steps.
+
+<p>
+There are system-dependent differences between the <tt>gcc</tt> on
+the lab computers and the <tt>gcc</tt> on the server.
+In particular, the server is very unforgiving of uninitialized
+variables.
+If your program fails on the server, look carefully for this kind of
+bug.
+
+<p>Don't forget the <tt>-lm</tt> on the end of the compilation line
+if you have used functions from the math library.
+There might also be some small differences in the availability of
+functions like <tt>strncmp()</tt> and etc for string handling.
+
+
+<i>You are strongly advised to compile your program on the server and
+test it as a routine part of your development.
+Only then will you have the confidence that it will work correctly
+when we test it.
+Use a normal gcc command (with -lm at the end if you need the math
+library) while you are connected, and then execute the compiled
+program on that machine with some suitable data.</i>
+
+<p>
+After you <tt>submit</tt>, wait for a few minutes, and then, before you
+disconnect from the server,
+<tt>verify</tt> your submission, to make sure that
+your program compiled smoothly and has executed on the first set of
+simple test data 
+(we will re-run all of the programs again after the due date,
+using further test data; you will not be able to access that test data in advance).
+
+<p>A complete transcript of a session from a Mac appears below, there
+are only minor differences between this and what you would see on a
+PC, and the commands that are typed to the <tt>dimefox:</tt> prompt are
+completely independent of which machine you started at.
+
+<p>It is assumed throughout that your source program is in a file
+<tt>assmt1.c</tt>.
+In the <tt>submit</tt> and <tt>verify</tt> commands, the first
+argument must be <tt>comp10002</tt> and is case-sensitive; and the
+second argument must be <tt>a1</tt>, the name that is being used
+for this particular project.
+The third argument to <tt>submit</tt> is the name of your program,
+and must be the C source file (not the executable).
+
+<p><i>You can submit as often as you like.</i>
+Indeed, the more frequently you lodge a submission, the better off
+you will be if you have a disaster and would like to recover a
+previous version of your program.
+Submitting once a day is not at all unreasonable.
+And the sad truth is, most of the people who stuff things up at the
+last moment do so because they are floundering
+around trying to understand what they are supposed to be doing.
+Practise in advance...
+
+
+<h3>From a PC, including the Lab machines</h3>
+
+0. Install the <tt>PuTTY</tt> and <tt>pscp</tt> programs from
+
+<a target="_blank" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">here</a>.
+
+They are already installed on the lab computers, find them in the menus
+or use Explorer to locate them.
+
+<p>1a. From your home PC or your own laptop:
+do the COPY step using <tt>pscp</tt>, by starting up a
+<tt>cmd</tt> shell (like you did to compile the program), <tt>cd</tt>'ing to
+the directory that has your <tt>assmt1.c</tt> file in it, and typing
+<pre>
+    pscp assmt1.c <i>my-username</i>@dimefox.eng.unimelb.edu.au:
+</pre>
+(don't miss the final colon, it is required).
+You might get asked to accept an encryption key (type "yes"), and
+will need to type your University password.
+The file will then copy over to your home directory on the server.
+<!--
+The COPY step can be done as is shown in the instructions in the LMS
+and the screen shots under the "Assignment 2" tab.
+<b>Or</b> you can just use <tt>pscp</tt> anyway, see the instructions below (access <tt>pscp</tt>
+from the command menus, you won't be able to install software on a lab machine).
+-->
+Note that if you have downloaded <tt>pscp</tt> and <tt>PuTTY</tt>,
+they are probably just sitting on your Desktop.
+They need to be moved to a place where they can be executed, either a
+folder that is in your path, or into (perhaps via a shortcut) the directory where you have
+your C programs.
+
+<p>1b.
+On a lab machine: your files are on the shared drive, and are already
+accessible from <tt>dimefox</tt>.
+All you have to do when you login to <tt>dimefox</tt> is navigate to
+the right place using <tt>cd</tt> commands.
+
+<!--
+<p>If necessary: link for
+<a href="http://ithelp.eng.unimelb.edu.au/sharehelp">mounting shared drives</a>.
+--->
+
+<p> 2.
+The SUBMIT step is done by using <tt>PuTTY</tt> to remote login to
+one of the student servers.
+<!--
+(again,
+see the screenshots on the LMS
+instructions if you are in any doubt; note that
+you may be asked to
+accept an encryption key by typing "yes", and will have to type your
+password).
+-->
+Use "All programs &gt; Network Apps &gt; PuTTY &gt; PuTTY"
+on the lab machines, or the location that you placed
+it on you home computer (perhaps the Desktop),
+to start <tt>PuTTY</tt> running.
+On your home computer, it may be necessary for you to "accept to
+execute a program that has been downloaded from the internet" first,
+and note again, this will not work at home if you haven't installed
+and started the University VPN, instructions <a href="http://studentit.unimelb.edu.au/findconnect/vpn">here</a>.
+<p>
+A dialog box will open, type <tt>dimefox.eng.unimelb.edu.au</tt> as the
+"destination you want to connect to", and check that the "Port" is
+set to 22.
+Then click the "Open" button, and wait for a connection to be
+established; click "Yes" to accept the server's host key if you get
+asked.
+If <tt>dimefox</tt> is unavailable, try
+<tt>nutmeg</tt>,
+they are equivalent and both share the same file systems 
+(you can always use either of these machines, <tt>dimefox</tt> is used here as the example for consistency only).
+
+<p>
+You will then be issued with a login prompt;
+type your University username and University password to connect to the Unix server.
+
+<p>
+Once you have logged in, check that your file is indeed sitting there
+waiting to be submitted (use the command <tt>ls</tt>), check that it
+compiles and executes cleanly on the server (use <tt>gcc</tt> and
+etc), and then type the
+<tt>submit</tt> command:
+<pre>
+    submit comp10002 a1 assmt1.c    (Note: '1' in "a1" here is digit 1, not letter l)
+</pre>
+Wait for a few minutes, and then carry out the verify and check steps:
+<pre>
+    verify comp10002 a1 > receipt.txt
+    more receipt.txt
+</pre>
+Look through <tt>receipt.txt</tt> carefully to make sure that
+(a) your program compiled; (b) it executed on the single initial test
+file; and (c) that the listing that is shown is the right version of
+your program. See the <b>Debugging Information</b> section below for informtation on 
+how to interpret the <tt>receipt.txt</tt> file. 
+
+<p>You have to have a network connection to make all of this work, of course!
+
+<p>Then, logout from the server using <tt>logout</tt>, and exit
+<tt>PuTTY</tt> if it doesn't close by itself.
+
+<!--
+<h3>From a Windows machine</h3>
+
+<p>There are further instructions on running <tt>pscp</tt> <a href="http://tartarus.org/~simon/putty-snapshots/htmldoc/Chapter5.html#pscp">here</a>.
+
+<p>2. Then do the SUBMIT step by connecting to the same machine by running <tt>putty</tt>, as shown on the LMS screenshots, and after completing the login process, executing
+<pre>
+    submit comp20005 ass1 assmt1.c
+</pre>
+followed by the verify and check steps:
+<pre>
+    verify comp20005 ass1 > my-receipt-ass1.txt
+    more my-receipt-ass1.txt
+</pre>
+
+<p>Then, logout from the server using <tt>logout</tt>, and exit
+<tt>putty</tt> if it doesn't close by itself.
+-->
+
+
+<h3>From a Mac (and Linux)</h3>
+
+It's only a little different.
+Remember, this will not work outside the University's network if you
+haven't installed and started the University VPN, instructions <a
+href="http://studentit.unimelb.edu.au/findconnect/vpn">here</a>.
+
+<p>
+Linux users should look <a
+href="http://people.eng.unimelb.edu.au/lucasjb/oc.html ">here</a> for
+guidance on installing the VPN.
+
+<p>
+
+<p>1.
+To do the COPY step, start a terminal window ("Terminal" on a mac),
+then navigate to the directory that contains your file, then execute a
+<tt>scp</tt> command (already installed on a Mac as a standard tool):
+<pre>
+    scp assmt1.c <i>my-username</i>@dimefox.eng.unimelb.edu.au:
+</pre>
+(don't miss the final colon, and don't forget that you need to <tt>cd</tt> to
+the right directory first).
+Type your University password when prompted for it.
+
+<p>2.
+Then to do the SUBMIT step, you stay in the terminal window, and use
+<tt>ssh</tt> to create a network terminal connection through to the server:
+<pre>
+    ssh <i>my-username</i>@dimefox.eng.unimelb.edu.au
+</pre>
+(without a final colon)
+and then once you have typed your University password (and typed
+"yes" if it asks you to accept the encryption key) everything you
+type in that window is being executed on the server.
+So now you can check that your file is there by using <tt>ls</tt>,
+compile it using <tt>gcc</tt>, and presuming that it is all ok, run
+the <tt>submit</tt> command:
+<pre>
+    submit comp10002 a1 assmt1.c   (Note: '1' in "a1" here is digit 1, not letter l)
+</pre>
+followed a few minutes later by the verify and check steps:
+<pre>
+    verify comp10002 a1 > receipt.txt
+    more receipt.txt
+</pre>
+Look through <tt>receipt.txt</tt> carefully to make sure that
+(a) your program compiled; (b) it executed on the single initial test
+file; and (c) that the listing that is shown is the right version of
+your program. See the <b>Debugging Information</b> section below for informtation on 
+how to interpret the <tt>receipt.txt</tt> file. 
+
+<p>Then, logout from the server using <tt>logout</tt>; you can then close the local terminal window that you were using.
+
+<h3>From A Home Computer</h3>
+
+It is exactly the same, <i>except</i> that before you can use
+<tt>ssh</tt> or <tt>scp</tt>, you need to have installed the University's
+VPN (virtual private network) software, see the instructions
+<a href="http://studentit.unimelb.edu.au/findconnect/vpn">linked from here</a>.
+
+<font color = "red">
+<h3>Debugging Information</h3>
+
+<p>In the "receip.txt" file generated by the "verify" command, if it shows a message like 
+"Your results seem to be CORRECT.  :)" at the end of the file, it means that your submission 
+has generated exactly the same output as our sample output. This is a good sign, but you still 
+need to test your submission thoroughly with more test data to ensure that your submission 
+works properly on various of input. </p>
+
+<p>If the file contains a message like 
+"Oops, your results seem to be INCORRECT.  :(" at the end, it means that your submission 
+has generated different output from our sample output. In this case, you should look for lines 
+where there is a '&lt;', '&gt;', or '|' sign at the middle. These signs suggest 
+missing an output line, having an extra output line, and there are some output differences (often whitespaces) in the line. 
+You should fix these errors and resubmit your code. </p></font>
+
+<h3>Complete Transcript</h3>
+
+With a few liberties shown, here is a complete transcript for a
+person whose login name is <i>uname</i>, showing the steps to be
+followed on a mac, assuming that they have installed the VPN (or are
+on a lab computer).
+From a PC,
+<tt>pscp</tt> will have been used to do the COPY step rather than
+<tt>scp</tt>.
+Note that this careful user is checking that their program compiles and executes on the server before doing the submission.
+Submissions that don't compile will be heavily penalised.
+
+<p>
+You can also see a similar submission sequence as part of one of the lecture
+recordings.
+
+<pre>
+mac: cd comp10002/a1
+mac: ls
+assmt1.c
+assmt1
+test0.txt
+
+mac: scp assmt1.c uname@dimefox.eng.unimelb.edu.au:
+uname@dimefox.eng.unimelb.edu.au's password: XXXXXXX
+
+mac: scp test0.txt uname@dimefox.eng.unimelb.edu.au:
+uname@dimefox.eng.unimelb.edu.au's password: XXXXXXX
+
+mac: ssh uname@dimefox.eng.unimelb.edu.au
+Do you wish to accept security key: yes
+uname@dimefox.eng.unimelb.edu.au's password: XXXXXX
+
+dimefox: ls
+assmt1.c
+test0.txt
+
+dimefox: gcc -Wall -std=c99 -o assmt1 assmt1.c
+<!-- # <i>Note: need the -lm at the end</i> -->
+dimefox: ./assmt1 &lt; test0.txt
+
+# <i>Should see the same output that you got on your own computer</i>
+# <i>if not, you have a bug, look first for uninitialized variables</i>
+
+dimefox: submit comp10002 a1 assmt1.c
+This is part of the legacy submit system.
+Connecting to dimefox.eng.unimelb.edu.au ... OK
+Thursday 04 April 2019 09:10:57
+Your submission is continuing in the background.
+Don't forget to VERIFY later.
+
+# <i>wait for a few minutes</i>
+
+dimefox: verify comp10002 a1 &gt; receipt.txt
+This is part of the legacy submit system.
+Connecting to dimefox.eng.unimelb.edu.au ... OK
+dimefox: ls
+assmt1
+assmt1.c
+test0.txt
+receipt.txt
+
+dimefox: more receipt.txt
+
+# <i>look carefully at this file to check that:</i>
+# <i>(a) you submitted the right program;</i>
+# <i>(b) that the program compiled properly, and</i>
+# <i>(c) it then executed correctly on the simple test data that was used</i>
+
+dimefox: logout
+Connection to dimefox.eng.unimelb.edu.au closed.
+
+mac:
+</pre>
+
+<p><i>
+Drafted by Alistair Moffat.
+</i>
+
+<br>
+Last updated on 04 April 2019 by 
+<i>Jianzhong Qi, jianzhong.qi@unimelb.edu.au</i>
+</font>       
+</body></html>

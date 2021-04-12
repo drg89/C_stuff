@@ -1,0 +1,38 @@
+Stage 1
+==========
+a*doctor*@#*$@#*a*day*kee)(*&ps*the*apples*away
+
+Stage 2
+==========
+a*doctor***a*day*kee*ps*the*apples*away
+when*one*door*of*happiness*closes*another*opens**
+******a
+those*who*dare*to*fail*can*achieve*greatly**john*
+*****a******a**
+
+Stage 3
+==========
+a*doctor*a*day*kee*ps*the*apples*away
+when*one*door*of*happiness*closes*another*opens
+a
+those*who*dare*to*fail*can*achieve*greatly*john
+a*a
+Total: 5
+Longest: when*one*door*of*happiness*closes*another*opens
+Length: 47
+
+Stage 4
+==========
+a*doctor*a*day*kee*ps*the*apples*away
+when*one*door*of*happiness*closes*another*opens
+those*who*dare*to*fail*can*achieve*greatly*john
+a*a
+Non-contained: 4
+
+Stage 5
+==========
+a
+a*a
+a*doctor*a*day*kee*ps*the*apples*away
+those*who*dare*to*fail*can*achieve*greatly*john
+when*one*door*of*happiness*closes*another*opens

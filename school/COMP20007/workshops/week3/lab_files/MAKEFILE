@@ -1,0 +1,6 @@
+racecar: racecar.o racecar_test.o
+	gcc -Wall -o racecar racecar.o racecar_test.o
+racecar.o:
+	gcc -Wall -c racecar.c
+racecar_test:
+	gcc -Wall -c racecar_test.c
